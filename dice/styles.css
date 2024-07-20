@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#winner {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.dice-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.dice {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin: 0 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+#rollButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}

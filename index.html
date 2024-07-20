@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            height: 150px;
+            width: 400px;
+            display: flex;
+            margin: auto;
+            margin-top: 100px;
+            padding-left: 50px;
+        }
+        div{
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            border-radius: 15px;
+            margin-top: 25px;
+            margin-right: 10px;
+        }
+        #roller{
+      width: 150px;
+      height: 50px;
+      color:black;
+      background-color: aqua;
+      
+      border-radius: 30px;
+      cursor: pointer;
+
+    }
+    #win{
+      color:rgb(28, 68, 68);
+      width:350px;
+      border:none;
+      text-decoration: underline;
+      font-size: 25px;
+    }
+    </style>
+</head>
+<body>
+    <div id="win"></div>
+    <div id="main">
+        <div id="dice1"></div>
+        <div id="dice2"></div>
+        <div id="dice3"></div>
+    </div>
+    <button id="roller">Roll the Dice</button>
+</body>
+</html>
+<script>
+    
+   
+    let d1=document.getElementById("dice1");
+    let d2=document.getElementById("dice2");
+    let d3=document.getElementById("dice3");
+    let roller=document.getElementById("roller");
+    let win=document.getElementById("win")
+
+    let d1num=()=>{
+        let num=Math.floor(Math.random()*6)+1;
+        
+        console.log(num);
+        d1.textContent=num;
+        d1.style.alignContent="center";
+        return num
+    }
+    let d2num=()=>{
+        let num=Math.floor(Math.random()*6)+1;
+        
+        console.log(num);
+        d2.textContent=num;
+        d2.style.alignContent="center";
+        return num
+    }
+    let d3num=()=>{
+        let num=Math.floor(Math.random()*6)+1;
+        
+        console.log(num);
+        d3.textContent=num;
+        d3.style.alignContent="center";
+        return num
+    }
+
+    roller.addEventListener("click",()=>{
+        // d1num();
+        // d2num();
+        // d3num();
+        coloring();
+    })
+
+    function coloring(){
+        let a1=d1num();
+        let a2=d2num();
+        let a3=d3num();
+
+        let arr=[a1,a2,a3]
+        let max=Math.max(...arr)
+        let min=Math.min(...arr)
+        console.log(max)
+        console.log(min)
+        let arr1=arr.sort()
+        console.log(arr1)
+
+        if(arr1[0]==a2){
+      d2.style.backgroundColor="red";
+    
+    }
+    if(arr1[0]==a3){
+      d3.style.backgroundColor="red";
+    
+    }
+    if(arr1[0]==a1&&arr1[0]==a2){
+      d1.style.backgroundColor="blue";
+      d2.style.backgroundColor="blue";
+    
+    }
+    if(arr1[0]==a1&&arr1[0]==a3){
+      d1.style.backgroundColor="blue";
+      d3.style.backgroundColor="blue";
+    
+    }
+    if(arr1[0]==a3&&arr1[0]==a2){
+      d3.style.backgroundColor="blue";
+      d2.style.backgroundColor="blue";
+    
+    }
+    if(arr1[1]==a1){
+      d1.style.backgroundColor="yellow";
+    
+    }
+
+    if(arr1[1]==a2){
+      d2.style.backgroundColor="yellow";
+    
+    }
+    if(arr1[1]==a3){
+      d3.style.backgroundColor="yellow";
+
+    }
+    if(arr1[2]==a1){
+      d1.style.backgroundColor="green";
+    win.textContent="Winner Is Dice 'A'";
+    }
+
+    if(arr1[2]==a2){
+      d2.style.backgroundColor="green";
+      win.textContent="Winner Is Dice 'B'";
+    
+    }
+    if(arr1[2]==a3){
+      d3.style.backgroundColor="green";
+      win.textContent="Winner Is Dice 'C'";
+
+
+    }
+    if(arr1[1]==a1&&arr1[1]==a2){
+      d1.style.backgroundColor="blue";
+      d2.style.backgroundColor="blue";
+    
+    }
+    if(arr1[1]==a1&&arr1[1]==a3){
+      d1.style.backgroundColor="blue";
+      d3.style.backgroundColor="blue";
+    
+    }
+    if(arr1[1]==a3&&arr1[1]==a2){
+      d3.style.backgroundColor="blue";
+      d2.style.backgroundColor="blue";
+    
+    }
+
+    if(arr1[2]==a1&&arr1[2]==a2){
+      d1.style.backgroundColor="blue";
+      d2.style.backgroundColor="blue";
+    
+    }
+    if(arr1[2]==a1&&arr1[2]==a3){
+      d1.style.backgroundColor="blue";
+      d3.style.backgroundColor="blue";
+    
+    }
+    if(arr1[2]==a3&&arr1[2]==a2){
+      d3.style.backgroundColor="blue";
+      d2.style.backgroundColor="blue";
+    
+    }
+    if(arr1[0]==arr1[1]==arr1[2]){
+      d1.style.backgroundcolor="blue";
+      d3.style.backgroundColor="blue";
+      d2.style.backgroundColor="blue";
+    
+    }
+
+    
+    
+
+    
+
+
+    
+
+
+
+
+
+
+    }
+   
+    
+
+</script>
